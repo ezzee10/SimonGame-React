@@ -1,13 +1,179 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  font-size: 1.6rem;
+  background: rgba(235,233,249,1);
+background: -moz-linear-gradient(left, rgba(235,233,249,1) 0%, rgba(206,199,236,1) 51%, rgba(216,208,239,1) 80%, rgba(193,191,234,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(235,233,249,1)), color-stop(51%, rgba(206,199,236,1)), color-stop(80%, rgba(216,208,239,1)), color-stop(100%, rgba(193,191,234,1)));
+background: -webkit-linear-gradient(left, rgba(235,233,249,1) 0%, rgba(206,199,236,1) 51%, rgba(216,208,239,1) 80%, rgba(193,191,234,1) 100%);
+background: -o-linear-gradient(left, rgba(235,233,249,1) 0%, rgba(206,199,236,1) 51%, rgba(216,208,239,1) 80%, rgba(193,191,234,1) 100%);
+background: -ms-linear-gradient(left, rgba(235,233,249,1) 0%, rgba(206,199,236,1) 51%, rgba(216,208,239,1) 80%, rgba(193,191,234,1) 100%);
+background: linear-gradient(to right, rgba(235,233,249,1) 0%, rgba(206,199,236,1) 51%, rgba(216,208,239,1) 80%, rgba(193,191,234,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', endColorstr='#c1bfea', GradientType=1 );
+
+  color: #313133;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container{
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hidden{
+  display: none;
+}
+
+h1{
+  font-size: 4rem;
+}
+
+h2{
+  font-size: 2.5rem;
+}
+
+
+/**Botones**/
+
+.btn{
+  height: 18rem;
+  width: 18rem;
+  outline: none;
+  opacity: 0.5;
+  border: 4px solid black;
+}
+
+.btn:hover {
+  transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.btn-1{
+  background-color: green;
+  border-radius: 100% 0 0 0 ;
+
+}
+
+.btn-2{
+  background-color: red;
+  border-radius: 0 100% 0 0 ;
+}
+
+.btn-3{
+  background-color: blue;
+  border-radius: 0 0 100% 0 ;
+}
+
+.btn-4{
+  background-color: yellow;
+  border-radius: 0 0 0 100% ;
+}
+
+.no-opacity{
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.start {
+  min-width: 300px;
+  min-height: 60px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4FD1C5;
+background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  }
+
+start::before {
+content: '';
+  border-radius: 1000px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  border: 6px solid #00FFCB;
+  box-shadow: 0 0 60px rgba(0,255,203,.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.start:hover, .start:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+.start:hover::before, .start:focus::before {
+  opacity: 1;
+}
+
+.start::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00FFCB;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+.start:hover::after, .start:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+.cont-button{
+  margin-top: 15rem;
+}
+
+.red{
+  color: red;
+}
+
+
+
+
+
+

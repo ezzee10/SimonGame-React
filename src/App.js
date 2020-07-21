@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+
+import SimonProvider from './context/SimonProvider';
+
+import Start from './components/Start';
+import Reset from './components/Reset';
+import EstadoPartida from './components/EstadoPartida';
+import Nivel from './components/Nivel';
+import BotonesColores from './components/BotonesColores';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Fragment>
+      <div className="container">
+        <h1>Simon Game</h1>
+        <SimonProvider>
+          <EstadoPartida />
+          <BotonesColores />
+          <Nivel />
+          <div class="cont-button">
+            <Start />
+          </div>
+          <Reset />
+        </SimonProvider>
+      </div>
+    </Fragment>
   );
 }
 
